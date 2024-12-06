@@ -2,6 +2,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:note_app/constant.dart';
 import 'package:note_app/views/widgets/add_show_model_bottem_sheeet.dart';
 import 'package:note_app/views/widgets/custom_body_note.dart';
 
@@ -13,9 +14,11 @@ class NotesViews extends StatelessWidget {
     return Scaffold(
       body: const CustomBodyNote(),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: kColor,
         child: const Icon(
+          color: Colors.black,
           Icons.add,
+          size: 30,
         ),
         onPressed: () {
           showModalBottomSheet(

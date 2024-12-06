@@ -29,29 +29,32 @@ class AddShowModelBottemSheeet extends StatelessWidget {
           const SizedBox(
             height: 85,
           ),
-          Container(
-            width: double.infinity,
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: TextButton(
-                style: ButtonStyle(
-                  shape: WidgetStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                  backgroundColor: WidgetStateProperty.all(
-                    kColor,
-                  ),
+          TextButton(
+            style: ButtonStyle(
+              minimumSize: WidgetStateProperty.all(
+                const Size(
+                  double.infinity,
+                  16,
                 ),
-                onPressed: () {},
-                child: const Text(
-                  "Add",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                  ),
+              ),
+              padding: WidgetStateProperty.all(
+                const EdgeInsets.all(16),
+              ),
+              shape: WidgetStateProperty.all(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
                 ),
+              ),
+              backgroundColor: WidgetStateProperty.all(
+                kColor,
+              ),
+            ),
+            onPressed: () {},
+            child: const Text(
+              "Add",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 18,
               ),
             ),
           ),
