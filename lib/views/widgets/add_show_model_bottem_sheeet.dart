@@ -19,7 +19,9 @@ class AddShowModelBottemSheeet extends StatelessWidget {
           const CustomTextField(
             text: 'Title',
           ),
-          const SizedBox(height: 16),
+          const SizedBox(
+            height: 16,
+          ),
           const CustomTextField(
             text: 'Content',
             maxLines: 5,
