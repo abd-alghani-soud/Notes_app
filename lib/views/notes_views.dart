@@ -11,18 +11,12 @@ class NotesViews extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: const CustomBodyNote(),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.all(
-          16.0,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blueAccent,
+        child: const Icon(
+          Icons.add,
         ),
-        child: FloatingActionButton(
-          backgroundColor: Colors.blueAccent,
-          child: const Icon(
-            size: 30,
-            Icons.add,
-          ),
-          onPressed: () {},
-        ),
+        onPressed: () {},
       ),
     );
   }
