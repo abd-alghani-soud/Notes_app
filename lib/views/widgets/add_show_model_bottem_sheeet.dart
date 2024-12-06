@@ -1,52 +1,31 @@
 // ignore_for_file: avoid_unnecessary_containers, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:note_app/constant.dart';
+import 'package:note_app/views/widgets/custom_text_field.dart';
 
 class AddShowModelBottemSheeet extends StatelessWidget {
   const AddShowModelBottemSheeet({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Column(
         children: [
           const SizedBox(
             height: 45,
           ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: TextField(
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(
-                  horizontal: 8,
-                  vertical: 24.0,
-                ),
-                hintText: "title",
-                hintStyle: TextStyle(
-                  color: Colors.lightBlueAccent,
-                ),
-                border: OutlineInputBorder(),
-              ),
-            ),
+          const CustomTextField(
+            text: 'Title',
           ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: TextField(
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(
-                  horizontal: 8,
-                  vertical: 96.0,
-                ),
-                hintText: "content",
-                hintStyle: TextStyle(
-                  color: Colors.lightBlueAccent,
-                ),
-                border: OutlineInputBorder(),
-              ),
-            ),
+          const SizedBox(height: 16),
+          const CustomTextField(
+            text: 'Content',
+            maxLines: 5,
           ),
           const SizedBox(
-            height: 45,
+            height: 85,
           ),
           Container(
             width: double.infinity,
@@ -59,8 +38,9 @@ class AddShowModelBottemSheeet extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  backgroundColor:
-                      WidgetStateProperty.all(Colors.lightBlueAccent),
+                  backgroundColor: WidgetStateProperty.all(
+                    kColor,
+                  ),
                 ),
                 onPressed: () {},
                 child: const Text(
