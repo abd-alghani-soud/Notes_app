@@ -14,7 +14,10 @@ class CustomBodyNote extends StatelessWidget {
           SizedBox(
             height: 35,
           ),
-          CustomAppBar(),
+          CustomAppBar(
+            text: 'Note',
+            icon: Icons.search,
+          ),
           Expanded(
             child: CustomListView(),
           ),
