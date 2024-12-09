@@ -1,9 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:note_app/views/edit_note_view.dart';
 
 class CustomNoteItem extends StatelessWidget {
   const CustomNoteItem({super.key});
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -27,7 +28,12 @@ class CustomNoteItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(
             16,
           ),
-          color: const Color(0xFFFFCC80),
+          color: Color.fromRGBO(
+            Random().nextInt(400),
+            Random().nextInt(400),
+            Random().nextInt(400),
+            1,
+          ),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
