@@ -30,8 +30,8 @@ class CustomNoteItem extends StatelessWidget {
           ),
           color: Color.fromRGBO(
             Random().nextInt(400),
-            Random().nextInt(400),
-            Random().nextInt(400),
+            Random().nextInt(255),
+            Random().nextInt(300),
             1,
           ),
         ),
