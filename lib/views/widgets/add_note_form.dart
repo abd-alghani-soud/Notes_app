@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:note_app/views/widgets/custom_botton.dart';
 import 'package:note_app/views/widgets/custom_text_field.dart';
 
-class AddNoteFormState extends StatefulWidget {
-  const AddNoteFormState({super.key});
+class AddNoteForm extends StatefulWidget {
+  const AddNoteForm({super.key});
 
   @override
-  State<AddNoteFormState> createState() => _AddNoteFormStateState();
+  State<AddNoteForm> createState() => _AddNoteFormState();
 }
 
-class _AddNoteFormStateState extends State<AddNoteFormState> {
+class _AddNoteFormState extends State<AddNoteForm> {
   final GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, subTitle;
@@ -17,6 +17,7 @@ class _AddNoteFormStateState extends State<AddNoteFormState> {
   @override
   Widget build(BuildContext context) {
     return Form(
+      autovalidateMode: autovalidateMode,
       key: formKey,
       child: Column(
         children: [
