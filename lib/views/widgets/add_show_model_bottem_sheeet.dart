@@ -11,25 +11,27 @@ class AddShowModelBottemSheeet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: SingleChildScrollView(
-        child: BlocConsumer<AddNotesCubit, AddNotesState>(
-          listener: (context, state) {
-            if (state is AddNotesSuccess) {
-              Navigator.pop(context);
-            }
-            if (state is AddNotesFailure) {
-              // ignore: avoid_print
-              print('failed ${state.errorMessage}');
-            }
-          },
-          builder: (context, state) {
-            return ModalProgressHUD(
-              inAsyncCall: state is AddNotesLoading ? true : false,
-              child: const AddNoteForm(),
-            );
-          },
-        ),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 16.0,
+      ),
+      child: BlocConsumer<AddNotesCubit, AddNotesState>(
+        listener: (context, state) {
+          if (state is AddNotesSuccess) {
+            Navigator.pop(context);
+          }
+          if (state is AddNotesFailure) {
+            // ignore: avoid_print
+            print('failed ${state.errorMessage}');
+          }
+        },
+        builder: (context, state) {
+          return ModalProgressHUD(
+            inAsyncCall: state is AddNotesLoading ? true : false,
+            child: const SingleChildScrollView(
+              child: AddNoteForm(),
+            ),
+          );
+        },
       ),
     );
   }
