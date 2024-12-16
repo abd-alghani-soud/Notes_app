@@ -13,7 +13,7 @@ class AddNoteForm extends StatefulWidget {
 }
 
 class _AddNoteFormState extends State<AddNoteForm> {
-  final GlobalKey<FormState> formKey = GlobalKey();
+  GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, subTitle;
 
@@ -46,21 +46,26 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 85,
           ),
-          CustomBotton(
-            onTap: () {
-              if (formKey.currentState!.validate()) {
-                formKey.currentState!.save();
-                var notelModel = NoteModel(
-                  title!,
-                  subTitle!,
-                  DateTime.now().toString(),
-                  Colors.lightBlue.value,
-                );
-                BlocProvider.of<AddNotesCubit>(context).addNote(notelModel);
-              } else {
-                autovalidateMode = AutovalidateMode.always;
-                setState(() {});
-              }
+          BlocBuilder<AddNotesCubit, AddNotesState>(
+            builder: (context, state) {
+              return CustomBotton(
+                isLoading: state is AddNotesLoading ? true : false,
+                onTap: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    var notelModel = NoteModel(
+                      title!,
+                      subTitle!,
+                      DateTime.now().toString(),
+                      Colors.lightBlue.value,
+                    );
+                    BlocProvider.of<AddNotesCubit>(context).addNote(notelModel);
+                  } else {
+                    autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
+              );
             },
           ),
           const SizedBox(
