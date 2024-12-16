@@ -25,12 +25,14 @@ class AddShowModelBottemSheeet extends StatelessWidget {
         builder: (context, state) {
           return AbsorbPointer(
             absorbing: state is AddNotesLoading ? true : false,
-            child: const SingleChildScrollView(
+            child: SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 16.0,
+                padding: EdgeInsets.only(
+                  left: 16.0,
+                  right: 16,
+                  bottom: MediaQuery.of(context).viewInsets.bottom,
                 ),
-                child: AddNoteForm(),
+                child: const AddNoteForm(),
               ),
             ),
           );
