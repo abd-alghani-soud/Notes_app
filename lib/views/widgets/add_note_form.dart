@@ -1,8 +1,8 @@
-// ignore: unused_import
 import 'dart:math';
-import 'package:intl/intl.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:note_app/cubits/add_notes_cubits/add_notes_cubit.dart';
 import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/widgets/custom_botton.dart';
@@ -51,6 +51,8 @@ class _AddNoteFormState extends State<AddNoteForm> {
           ),
           BlocBuilder<AddNotesCubit, AddNotesState>(
             builder: (context, state) {
+              var dataTime = DateTime.now();
+              var formattedDAtaTime = DateFormat.yMd().format(dataTime);
               return CustomBotton(
                 isLoading: state is AddNotesLoading ? true : false,
                 onTap: () {
@@ -59,7 +61,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                     var notelModel = NoteModel(
                       title!,
                       subTitle!,
-                      DateTime.now().toString(),
+                      formattedDAtaTime,
                       Color.fromRGBO(
                         Random().nextInt(400),
                         Random().nextInt(255),
