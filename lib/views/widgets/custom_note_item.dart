@@ -29,12 +29,6 @@ class CustomNoteItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(
             16,
           ),
-          // color: Color.fromRGBO(
-          //   Random().nextInt(400),
-          //   Random().nextInt(255),
-          //   Random().nextInt(300),
-          //   1,
-          // ),
           color: Color(notes.color),
         ),
         child: Column(
@@ -61,11 +55,15 @@ class CustomNoteItem extends StatelessWidget {
                   ),
                 ),
               ),
-              trailing: const Icon(
-                Icons.delete,
-                color: Colors.black,
-                size: 28,
-              ),
+              trailing: IconButton(
+                  onPressed: () {
+                    notes.delete();
+                  },
+                  icon: const Icon(
+                    Icons.delete,
+                    color: Colors.black,
+                    size: 28,
+                  )),
             ),
             Padding(
               padding: const EdgeInsets.only(right: 24.0),
