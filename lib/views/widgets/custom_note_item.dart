@@ -1,10 +1,11 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/edit_note_view.dart';
 
 class CustomNoteItem extends StatelessWidget {
-  const CustomNoteItem({super.key});
+  const CustomNoteItem({super.key, required this.notes});
+
+  final NoteModel notes;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -28,20 +29,21 @@ class CustomNoteItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(
             16,
           ),
-          color: Color.fromRGBO(
-            Random().nextInt(400),
-            Random().nextInt(255),
-            Random().nextInt(300),
-            1,
-          ),
+          // color: Color.fromRGBO(
+          //   Random().nextInt(400),
+          //   Random().nextInt(255),
+          //   Random().nextInt(300),
+          //   1,
+          // ),
+          color: Color(notes.color),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title: const Text(
-                "Flutter Tips",
-                style: TextStyle(
+              title: Text(
+                notes.title,
+                style: const TextStyle(
                   fontSize: 26,
                   color: Colors.black,
                 ),
@@ -52,7 +54,7 @@ class CustomNoteItem extends StatelessWidget {
                   bottom: 16,
                 ),
                 child: Text(
-                  "Build Your Career With Abd Alghani Soud",
+                  notes.subTitle,
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.black.withOpacity(0.5),
@@ -68,7 +70,7 @@ class CustomNoteItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 24.0),
               child: Text(
-                "12/4/2024",
+                notes.date,
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.black.withOpacity(0.5),

@@ -1,3 +1,6 @@
+// ignore: unused_import
+import 'dart:math';
+import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/cubits/add_notes_cubits/add_notes_cubit.dart';
@@ -57,7 +60,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
                       title!,
                       subTitle!,
                       DateTime.now().toString(),
-                      Colors.lightBlue.value,
+                      Color.fromRGBO(
+                        Random().nextInt(400),
+                        Random().nextInt(255),
+                        Random().nextInt(300),
+                        1,
+                      ).value,
                     );
                     BlocProvider.of<AddNotesCubit>(context).addNote(notelModel);
                   } else {
