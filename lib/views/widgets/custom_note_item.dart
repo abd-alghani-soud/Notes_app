@@ -6,7 +6,6 @@ import 'package:note_app/views/edit_note_view.dart';
 
 class CustomNoteItem extends StatelessWidget {
   const CustomNoteItem({super.key, required this.notes});
-
   final NoteModel notes;
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,9 @@ class CustomNoteItem extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return const EditNoteView();
+              return EditNoteView(
+                notes: notes,
+              );
             },
           ),
         );
