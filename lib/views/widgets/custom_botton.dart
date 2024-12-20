@@ -8,6 +8,7 @@ class CustomBotton extends StatelessWidget {
 
   final VoidCallback onTap;
   final bool isLoading;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -35,12 +36,11 @@ class CustomBotton extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w600,
-              fontSize: 20,
-            ),
-          ),
+                    fontSize: 20,
+                  ),
+                ),
         ),
       ),
     );
   }
 }
-

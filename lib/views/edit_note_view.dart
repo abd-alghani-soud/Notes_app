@@ -6,6 +6,7 @@ class EditNoteView extends StatelessWidget {
   const EditNoteView({super.key, required this.notes});
 
   final NoteModel notes;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

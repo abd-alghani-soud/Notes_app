@@ -10,6 +10,7 @@ part 'add_notes_state.dart';
 
 class AddNotesCubit extends Cubit<AddNotesState> {
   AddNotesCubit() : super(AddNotesInitial());
+
   addNote(NoteModel note) async {
     // ignore: unused_local_variable
     emit(AddNotesLoading());

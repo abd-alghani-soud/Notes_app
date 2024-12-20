@@ -8,6 +8,7 @@ class CustomAppBar extends StatelessWidget {
   final void Function()? onPressed;
   final String text;
   final IconData icon;
+
   @override
   Widget build(BuildContext context) {
     return Row(

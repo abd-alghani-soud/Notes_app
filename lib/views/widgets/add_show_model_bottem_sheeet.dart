@@ -19,8 +19,7 @@ class AddShowModelBottemSheeet extends StatelessWidget {
             Navigator.pop(context);
             BlocProvider.of<NotesCubit>(context).fetchAllNote();
           }
-          if (state is AddNotesFailure) {
-          }
+          if (state is AddNotesFailure) {}
         },
         builder: (context, state) {
           return AbsorbPointer(

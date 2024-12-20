@@ -5,6 +5,7 @@ class CustomIcon extends StatelessWidget {
 
   final IconData icon;
   final void Function()? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return Container(
